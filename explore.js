@@ -8,6 +8,7 @@ const Twilio = require("twilio")(accountSid, authToken);
 
 const client = new Twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 
+// Obtains the most recent message sent
 client.messages.list().then(messages => console.log(`The most recent message is ${messages[0].body}`)).catch(err => console.error(err));
 
 console.log("Gathering your message log");
